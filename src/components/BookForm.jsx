@@ -5,7 +5,7 @@ import Button from './Button';
 
 const BookForm = () => {
   const dispatch = useDispatch();
-  const [formData, setFormData] = useState({ title: '', author: 'Book Author', category: 'Under construction' });
+  const [formData, setFormData] = useState({ title: '', author: '', category: 'Under construction' });
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -21,13 +21,13 @@ const BookForm = () => {
     event.preventDefault();
     if (validateFormData(formData)) {
       dispatch(addBook(formData));
-      setFormData((prevState) => ({ ...prevState, title: '' }));
+      setFormData((prevState) => ({ ...prevState, title: '', author: '' }));
     } else {
       // setMessage('Please fill all the fields');
     }
   };
 
-  const { title } = formData;
+  const { title, author } = formData;
 
   return (
     <div className="mt-3">
@@ -41,6 +41,15 @@ const BookForm = () => {
             className="bg-transparent border-2 rounded-full py-1 px-6 text-[16px] leading-[22.4px] font-light placeholder:text-gray-500 text-black"
             placeholder="Book Title"
             value={title}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            name="author"
+            required
+            className="bg-transparent border-2 rounded-full py-1 px-6 text-[16px] leading-[22.4px] font-light placeholder:text-gray-500 text-black"
+            placeholder="Book Title"
+            value={author}
             onChange={handleChange}
           />
           <Button type="submit">
