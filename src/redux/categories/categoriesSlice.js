@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  categories: [],
+  categories: ['Fiction', 'Non-Fiction', 'Classic', 'Comic', 'Graphic Novel', 'Subject Matter', 'Target Audience', 'Personal Finance', 'Others'],
+  status: [],
 };
 
 const categoriesSlice = createSlice({
@@ -9,7 +10,7 @@ const categoriesSlice = createSlice({
   initialState,
   reducers: {
     getCategoriesStatus: (state) => {
-      state.categories = ['Under construction'];
+      state.status = ['Under construction'];
     },
   },
 });
