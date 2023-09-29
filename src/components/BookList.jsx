@@ -1,33 +1,17 @@
-import { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import { useSelector } from 'react-redux';
 import Book from './Book';
 import BookForm from './BookForm';
 
 const BookList = () => {
-  const [books, setBooks] = useState([
-    { id: 1, title: 'Book 1' },
-    { id: 2, title: 'Book 2' },
-  ]);
-
-  const handleAddBook = (bookTitle) => {
-    const newBook = {
-      id: uuidv4(),
-      title: bookTitle,
-    };
-    setBooks([...books, newBook]);
-  };
-
-  const handleDelete = (id) => {
-    setBooks([...books.filter((book) => book.id !== id)]);
-  };
+  const { bookItems } = useSelector((state) => state.books);
 
   return (
     <div>
-      <BookForm onAddBook={handleAddBook} />
+      <BookForm />
       <div>
         <h2 className="text-2xl font-bold my-3">Book List</h2>
-        {books.map((book) => (
-          <Book key={book.id} book={book} onDelete={handleDelete} />
+        {bookItems.map((book) => (
+          <Book key={book.item_id} book={book} />
         ))}
       </div>
     </div>
