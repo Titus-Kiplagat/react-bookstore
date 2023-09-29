@@ -47,6 +47,9 @@
 - Responsive design for both desktop and mobile devices.
 - Clear and intuitive bookstore user interface.
 - Simple functions to add and remove books
+- Use redux for state management.
+- Connect an existing API via Redux and use the data to display data in a UI.
+- Use React Router to navigate between pages in the app.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- LIVE DEMO -->
@@ -163,8 +166,17 @@ Start the project
 ## 🔭 Future Features <a name="future-features"></a>
 
 - Write test suites for the Bookstore application.
-- Use redux for state management.
 - Deploy the application.
+- Add a user authentication system.
+- Add a user profile page.
+- Add a search bar to search for books.
+- Add a filter to filter books by category.
+- Add a rating system to rate books.
+- Add a comments section to comment on books.
+- Add a carousel to display books.
+- Add a carousel to display categories.
+- Add a carousel to display comments.
+- Add a carousel to display ratings.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
