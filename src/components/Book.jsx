@@ -1,18 +1,37 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/booksSlice';
+import { deleteBookApi, removeBook } from '../redux/books/booksSlice';
 import Button from './Button';
 
 const Book = ({ book }) => {
   const dispatch = useDispatch();
-  const { title, item_id: itemId } = book;
+  const {
+    title, author, category, item_id: itemId,
+  } = book;
   return (
 
     <div className="border p-3 mb-2 flex gap-5">
-      <p className="text-xl font-bold">{title}</p>
+      <p className="text-xl font-bold">
+        TITLE:
+        {' '}
+        {title}
+      </p>
+      <p className="text-xl font-bold">
+        AUTHOR:
+        {' '}
+        {author}
+      </p>
+      <p className="text-xl font-bold">
+        CATEGORY:
+        {' '}
+        {category}
+      </p>
       <Button
         type="button"
-        onClick={() => dispatch(removeBook(itemId))}
+        onClick={() => {
+          dispatch(deleteBookApi(itemId));
+          dispatch(removeBook(itemId));
+        }}
         buttonStyles="bg-red-500 text-white px-2 py-1 rounded"
       >
         REMOVE
@@ -25,6 +44,8 @@ Book.propTypes = {
   book: PropTypes.shape({
     item_id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
   }).isRequired,
 };
 
