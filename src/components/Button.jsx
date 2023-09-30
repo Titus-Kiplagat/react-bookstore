@@ -22,7 +22,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
   type: 'button',
-  buttonStyles: 'max-w-[200px] h-auto rounded-full bg-indigo-500 text-white py-1 px-6 border border-indigo-500 transition duration-500 ease select-none hover:bg-indigo-600 focus:outline-none focus:shadow-outline',
+  buttonStyles: 'px-8 py-3.5 bg-[#0290ff] rounded font-robotoSlab text-white text-sm font-bold tracking-[0.5px]',
   onClick: () => {},
 };
 

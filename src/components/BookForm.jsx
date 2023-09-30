@@ -36,15 +36,15 @@ const BookForm = () => {
   const { title, author } = formData;
 
   return (
-    <div className="mt-3">
-      <h2 className="text-2xl font-bold mb-3">Add New Book</h2>
+    <div className="font-montserrat border-t-2">
+      <h2 className="font-bold text-xl text-[#888] my-[1.813rem]">Add New Book</h2>
       <div>
-        <form onSubmit={handleSubmit} className="flex gap-2">
+        <form onSubmit={handleSubmit} className="flex justify-between gap-10 text-base">
           <input
             type="text"
             name="title"
             required
-            className="bg-transparent border-2 rounded-full py-1 px-6 text-[16px] leading-[22.4px] font-light placeholder:text-gray-500 text-black"
+            className="borber border-2 border-[#E8E8E8] bg-white rounded p-[0.813rem] flex-grow placeholder:text-[#c4c4c4] outline-none"
             placeholder="Book Title"
             value={title}
             onChange={handleChange}
@@ -53,7 +53,7 @@ const BookForm = () => {
             type="text"
             name="author"
             required
-            className="bg-transparent border-2 rounded-full py-1 px-6 text-[16px] leading-[22.4px] font-light placeholder:text-gray-500 text-black"
+            className="borber border-2 border-[#E8E8E8] bg-white rounded p-[0.813rem] placeholder:text-[#c4c4c4] outline-none"
             placeholder="Book Author"
             value={author}
             onChange={handleChange}
@@ -62,12 +62,12 @@ const BookForm = () => {
             name="category"
             defaultValue="Category"
             required
-            className="bg-transparent border-2 rounded-full py-1 px-6 text-[16px] leading-[22.4px] font-light placeholder:text-gray-500 text-black"
+            className="borber border-2 border-[#E8E8E8] bg-white rounded p-[0.813rem] text-[#c4c4c4]"
             onChange={handleChange}
           >
             <option value="Category" disabled>Category</option>
             {categories.map((category) => (
-              <option key={category} value={category}>{category}</option>
+              <option key={category} value={category} className="text-black">{category}</option>
             )) }
           </select>
           <Button type="submit">

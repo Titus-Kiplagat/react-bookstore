@@ -25,12 +25,11 @@ const BookList = () => {
   }
 
   return (
-    <div>
-      <BookForm />
-      <div>
-        <h2 className="text-2xl font-bold my-3">Book List</h2>
+    <div className="flex flex-col w-11/12 mx-auto">
+      <div className="mb-[1.813rem]">
         {bookItems && bookItems.map((book) => <Book key={book.item_id} book={book} />)}
       </div>
+      <BookForm />
     </div>
   );
 };

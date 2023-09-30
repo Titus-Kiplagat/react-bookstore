@@ -6,7 +6,7 @@ import Navigation from './components/Navigation';
 function App() {
   return (
     <Router>
-      <div className="w-11/12 mx-auto h-screen">
+      <div className="mx-auto">
         <Navigation />
         <Routes>
           <Route path="/" element={<BookList />} />
