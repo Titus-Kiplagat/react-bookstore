@@ -6,7 +6,7 @@ import Navigation from './components/Navigation';
 function App() {
   return (
     <Router>
-      <div className="mx-auto">
+      <div>
         <Navigation />
         <Routes>
           <Route path="/" element={<BookList />} />
